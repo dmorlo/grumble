@@ -5,11 +5,12 @@
 package main
 
 import (
-	"code.google.com/p/goprotobuf/proto"
-	"mumble.info/grumble/pkg/replacefile"
 	"io/ioutil"
 	"path/filepath"
 	"strconv"
+
+	"code.google.com/p/goprotobuf/proto"
+	"github.com/dmorlo/grumble/pkg/replacefile"
 )
 
 func (server *Server) freezeToFile() (err error) {

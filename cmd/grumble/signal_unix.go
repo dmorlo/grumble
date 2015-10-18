@@ -8,10 +8,11 @@ package main
 
 import (
 	"fmt"
-	"mumble.info/grumble/pkg/logtarget"
 	"os"
 	"os/signal"
 	"syscall"
+
+	"github.com/dmorlo/grumble/pkg/logtarget"
 )
 
 func SignalHandler() {

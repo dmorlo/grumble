@@ -5,20 +5,21 @@
 package main
 
 import (
-	"code.google.com/p/goprotobuf/proto"
 	"errors"
 	"io"
 	"io/ioutil"
 	"log"
-	"mumble.info/grumble/pkg/acl"
-	"mumble.info/grumble/pkg/ban"
-	"mumble.info/grumble/pkg/freezer"
-	"mumble.info/grumble/pkg/mumbleproto"
-	"mumble.info/grumble/pkg/serverconf"
 	"os"
 	"path/filepath"
 	"strconv"
 	"time"
+
+	"code.google.com/p/goprotobuf/proto"
+	"github.com/dmorlo/grumble/pkg/acl"
+	"github.com/dmorlo/grumble/pkg/ban"
+	"github.com/dmorlo/grumble/pkg/freezer"
+	"github.com/dmorlo/grumble/pkg/mumbleproto"
+	"github.com/dmorlo/grumble/pkg/serverconf"
 )
 
 // Freeze a server to disk and closes the log file.

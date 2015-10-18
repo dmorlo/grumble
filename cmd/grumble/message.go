@@ -5,16 +5,17 @@
 package main
 
 import (
-	"code.google.com/p/goprotobuf/proto"
 	"crypto/aes"
 	"crypto/tls"
 	"fmt"
-	"mumble.info/grumble/pkg/acl"
-	"mumble.info/grumble/pkg/ban"
-	"mumble.info/grumble/pkg/freezer"
-	"mumble.info/grumble/pkg/mumbleproto"
 	"net"
 	"time"
+
+	"code.google.com/p/goprotobuf/proto"
+	"github.com/dmorlo/grumble/pkg/acl"
+	"github.com/dmorlo/grumble/pkg/ban"
+	"github.com/dmorlo/grumble/pkg/freezer"
+	"github.com/dmorlo/grumble/pkg/mumbleproto"
 )
 
 type Message struct {

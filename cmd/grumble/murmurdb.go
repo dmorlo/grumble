@@ -13,12 +13,13 @@ import (
 	"database/sql"
 	"errors"
 	"log"
-	"mumble.info/grumble/pkg/acl"
-	"mumble.info/grumble/pkg/ban"
 	"net"
 	"os"
 	"path/filepath"
 	"strconv"
+
+	"github.com/dmorlo/grumble/pkg/acl"
+	"github.com/dmorlo/grumble/pkg/ban"
 )
 
 const (

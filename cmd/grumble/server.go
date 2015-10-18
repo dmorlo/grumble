@@ -7,7 +7,6 @@ package main
 import (
 	"bufio"
 	"bytes"
-	"code.google.com/p/goprotobuf/proto"
 	"crypto/rand"
 	"crypto/sha1"
 	"crypto/tls"
@@ -17,19 +16,21 @@ import (
 	"fmt"
 	"hash"
 	"log"
-	"mumble.info/grumble/pkg/acl"
-	"mumble.info/grumble/pkg/ban"
-	"mumble.info/grumble/pkg/freezer"
-	"mumble.info/grumble/pkg/htmlfilter"
-	"mumble.info/grumble/pkg/logtarget"
-	"mumble.info/grumble/pkg/mumbleproto"
-	"mumble.info/grumble/pkg/serverconf"
-	"mumble.info/grumble/pkg/sessionpool"
 	"net"
 	"path/filepath"
 	"strings"
 	"sync"
 	"time"
+
+	"code.google.com/p/goprotobuf/proto"
+	"github.com/dmorlo/grumble/pkg/acl"
+	"github.com/dmorlo/grumble/pkg/ban"
+	"github.com/dmorlo/grumble/pkg/freezer"
+	"github.com/dmorlo/grumble/pkg/htmlfilter"
+	"github.com/dmorlo/grumble/pkg/logtarget"
+	"github.com/dmorlo/grumble/pkg/mumbleproto"
+	"github.com/dmorlo/grumble/pkg/serverconf"
+	"github.com/dmorlo/grumble/pkg/sessionpool"
 )
 
 // The default port a Murmur server listens on
@@ -676,12 +677,12 @@ func (server *Server) finishAuthenticate(client *Client) {
 func (server *Server) updateCodecVersions(connecting *Client) {
 	codecusers := map[int32]int{}
 	var (
-		winner int32
-		count int
-		users int
-		opus int
+		winner     int32
+		count      int
+		users      int
+		opus       int
 		enableOpus bool
-		txtMsg *mumbleproto.TextMessage = &mumbleproto.TextMessage{
+		txtMsg     *mumbleproto.TextMessage = &mumbleproto.TextMessage{
 			Message: proto.String("<strong>WARNING:</strong> Your client doesn't support the Opus codec the server is switching to, you won't be able to talk or hear anyone. Please upgrade to a client with Opus support."),
 		}
 	)
@@ -1357,7 +1358,7 @@ func (server *Server) CurrentPort() int {
 
 // Returns the host address the server will listen on when
 // it is started. This must be an IP address, either IPv4
-// or IPv6. 
+// or IPv6.
 func (server *Server) HostAddress() string {
 	host := server.cfg.StringValue("Address")
 	if host == "" {
