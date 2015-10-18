@@ -14,12 +14,12 @@ import (
 	"strconv"
 	"time"
 
-	"code.google.com/p/goprotobuf/proto"
 	"github.com/dmorlo/grumble/pkg/acl"
 	"github.com/dmorlo/grumble/pkg/ban"
 	"github.com/dmorlo/grumble/pkg/freezer"
 	"github.com/dmorlo/grumble/pkg/mumbleproto"
 	"github.com/dmorlo/grumble/pkg/serverconf"
+	"github.com/golang/protobuf/proto"
 )
 
 // Freeze a server to disk and closes the log file.

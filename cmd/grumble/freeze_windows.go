@@ -9,8 +9,8 @@ import (
 	"path/filepath"
 	"strconv"
 
-	"code.google.com/p/goprotobuf/proto"
 	"github.com/dmorlo/grumble/pkg/replacefile"
+	"github.com/golang/protobuf/proto"
 )
 
 func (server *Server) freezeToFile() (err error) {

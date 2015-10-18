@@ -7,19 +7,20 @@ package main
 import (
 	"bufio"
 	"bytes"
-	"code.google.com/p/goprotobuf/proto"
 	"crypto/tls"
 	"encoding/binary"
 	"errors"
 	"io"
 	"log"
+	"net"
+	"runtime"
+	"time"
+
 	"github.com/dmorlo/grumble/pkg/acl"
 	"github.com/dmorlo/grumble/pkg/cryptstate"
 	"github.com/dmorlo/grumble/pkg/mumbleproto"
 	"github.com/dmorlo/grumble/pkg/packetdata"
-	"net"
-	"runtime"
-	"time"
+	"github.com/golang/protobuf/proto"
 )
 
 // A client connection
@@ -330,7 +331,7 @@ func (client *Client) udpRecvLoop() {
 		case mumbleproto.UDPMessageVoiceCELTAlpha:
 			fallthrough
 		case mumbleproto.UDPMessageVoiceCELTBeta:
-			if (client.server.Opus) {
+			if client.server.Opus {
 				return
 			}
 			fallthrough

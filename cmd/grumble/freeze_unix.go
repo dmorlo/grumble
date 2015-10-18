@@ -7,11 +7,12 @@
 package main
 
 import (
-	"code.google.com/p/goprotobuf/proto"
 	"io/ioutil"
 	"os"
 	"path/filepath"
 	"strconv"
+
+	"github.com/golang/protobuf/proto"
 )
 
 func (server *Server) freezeToFile() (err error) {

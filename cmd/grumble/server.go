@@ -22,7 +22,6 @@ import (
 	"sync"
 	"time"
 
-	"code.google.com/p/goprotobuf/proto"
 	"github.com/dmorlo/grumble/pkg/acl"
 	"github.com/dmorlo/grumble/pkg/ban"
 	"github.com/dmorlo/grumble/pkg/freezer"
@@ -31,6 +30,7 @@ import (
 	"github.com/dmorlo/grumble/pkg/mumbleproto"
 	"github.com/dmorlo/grumble/pkg/serverconf"
 	"github.com/dmorlo/grumble/pkg/sessionpool"
+	"github.com/golang/protobuf/proto"
 )
 
 // The default port a Murmur server listens on
