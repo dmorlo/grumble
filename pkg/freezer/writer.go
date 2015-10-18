@@ -17,13 +17,14 @@ package freezer
 
 import (
 	"bytes"
-	"code.google.com/p/goprotobuf/proto"
 	"encoding/binary"
 	"hash"
 	"hash/crc32"
 	"io"
 	"math"
 	"os"
+
+	"github.com/golang/protobuf/proto"
 )
 
 // Log implements an append-only log for flattened

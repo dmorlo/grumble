@@ -5,12 +5,13 @@
 package freezer
 
 import (
-	"code.google.com/p/goprotobuf/proto"
 	"encoding/binary"
 	"hash"
 	"hash/crc32"
 	"io"
 	"math"
+
+	"github.com/golang/protobuf/proto"
 )
 
 // Checks whether the error err is an EOF

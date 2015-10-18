@@ -6,13 +6,14 @@ package freezer
 
 import (
 	"bytes"
-	"code.google.com/p/goprotobuf/proto"
 	"encoding/binary"
 	"hash/crc32"
 	"io"
 	"math"
 	"os"
 	"testing"
+
+	"github.com/golang/protobuf/proto"
 )
 
 var testValues []proto.Message = []proto.Message{
